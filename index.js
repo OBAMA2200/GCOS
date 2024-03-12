@@ -47,9 +47,10 @@ server.on("upgrade", (req, socket, head) => {
 });
 
 server.on("listening", () => {
-  console.log(`Doge Unblocker running at port 8080`);
+  console.log(`Doge Unblocker running at port ${process.env.PORT}`);
 });
 
 server.listen({
-  port: 0.0.0.0,
+  host: '0.0.0.0',
+  port: process.env.PORT,
 });
